@@ -1,0 +1,166 @@
+/* Basic styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #1E3E62;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    font-size: 25px;
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #001F3F;
+    color: white;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+aside {
+    top: 80px;
+    left: 0;
+    width: 200px;
+    height: calc(100% - 80px);
+    position: absolute;
+    padding-top: 20px;
+    background-color: #3A6D8C;
+    z-index: 1;
+}
+
+aside nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+aside nav a {
+    text-decoration: none;
+    display: block;
+    color: #cdcdcd;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 80%;
+    border-radius: 5px;
+}
+
+aside nav a:hover {
+    background-color: #6A9AB0;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 20px;
+    margin-left: 200px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    display: block;
+}
+
+.block {
+    margin-bottom: 20px;
+    background-color: #EAD8B1;
+    border: 1px solid #6A9AB0;
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    text-align: justify;
+    flex-basis: 30%;
+    box-sizing: border-box;
+}
+
+.inline {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.inline a {
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    padding: 10px;
+    background-color: #001F3F;
+    color: white;
+    width: 100%;
+}
+
+/* layout untuk smartphone */
+@media only screen and (max-width: 600px) {
+    .main {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .block {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    aside {
+        width: 100%;
+        position: relative;
+        height: auto;
+        top: 0;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
+
+/* layout untuk ipad / tablet */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .main {
+        margin-left: 0;
+        margin-top: 120px;
+    }
+    .block {
+        flex-basis: 45%;
+    }
+    aside {
+        width: 100%;
+        position: relative;
+        height: auto;
+        top: 0;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
+
+/* layout untuk komputer / laptop*/
+@media only screen and (min-width: 1025px) {
+    .main {
+        margin-left: 200px;
+    }
+    .block {
+        flex-basis: 30%;
+    }
+    .footer {
+        flex-direction: column;
+    }
+}
